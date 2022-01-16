@@ -58,15 +58,8 @@ class Flags:
 flags = Flags()
 
 # VERSION MODULE
-class Version:
-    def getPygameVersion(self) -> str:
-        return pygame.version.ver
-    
-    def getSDLVersion(sel) -> str:
-        return pygame.version.SDL
-    
-    def getEngineVersion(self) -> str:
-        return constants.ENGINEVERSION
+def version(target) -> str:
+    return pygame.version.ver if target=="pygame" else pygame.version.SDL (if target.lower()=="sdl" else constants.ENGINEVERSION)
 
 version = Version()
 
