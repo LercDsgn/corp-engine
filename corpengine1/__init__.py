@@ -64,6 +64,7 @@ class Constants:
         self.ENGINEVERSION: str = '1.1.1'
         self.DEFAULTSCREENSIZE: tuple = (640, 360)
         self.WINDOWTITLE: str = 'CORP Engine window'
+        self.WINDOWICON: str = ''
         self.FLAGS: int
         self.RUNNING: bool = True
         self.FPS_CAP: int = 60
@@ -1217,7 +1218,7 @@ def Rectangle(x: float, y: float, width: float, height: float) -> pygame.Rect:
 class Window(object):
     def __init__(self, parent: object) -> None:
         pygame.display.set_caption(constants.WINDOWTITLE)
-
+        pygame.display.set_icon(constants.WINDOWICOFCN)
         self.parent: object = parent
         self.screen: pygame.Surface = pygame.display.set_mode(constants.DEFAULTSCREENSIZE, constants.FLAGS, 32)
         self.renderWindow: pygame.Surface = self.screen.copy()
